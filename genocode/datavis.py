@@ -165,7 +165,7 @@ def compounddata(mean1=None, sdev1=None, serror1=None, upperci1=None, \
                                                                     serror2, \
                                                                     upperci2, \
                                                                     lowerci2)
-    flmean3, flsdev3, flserror3, flupperci3, fllowerci3 = correctdatatype(
+    flmean3, flsdev3, flserror3, flupperci3, fllowerci3 = correctdatatype(\
                                                                     mean3, \
                                                                     sdev3, \
                                                                     serror3, \
