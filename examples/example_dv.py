@@ -4,7 +4,9 @@ present in datavis.py.
 """
 
 import numpy as np
-import datavis
+import sys
+sys.path.append('..')
+from genocode import datavis
 
 MEAN1 = 24.12
 SDEV1 = 3.87
