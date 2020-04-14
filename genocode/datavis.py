@@ -26,7 +26,7 @@ def se_to_sd(serror, size):
     sdev = serror*math.sqrt(size)
     return sdev
 
-def ci_to_sd(lowerci, upperci, cival=95, size=100):
+def ci_to_sd(lowerci, upperci, cival=95.0, size=100):
     """
     Converts Confidence interval to Mean and Standard deviation.
     Parameters:
@@ -81,7 +81,8 @@ def datagen(mean=None, sdev=None, serror=None, lowerci=None, upperci=None, \
     randdata = np.random.normal(mean, sdev, size)
     return randdata
 
-def correctdatatype(mean=None, sdev=None, serror=None, upperci=None, lowerci=None):
+def correctdatatype(mean=None, sdev=None, serror=None, upperci=None, \
+                    lowerci=None):
     """
     Returns float values for each statistical parameter.
     Parameters:
@@ -123,23 +124,24 @@ def correctdatatype(mean=None, sdev=None, serror=None, upperci=None, lowerci=Non
         flci = lowerci
     return fmean, fsdev, fserror, fuci, flci
 
-def compounddata(mean1=None, sdev1=None, serror1=None, upperci1=None, lowerci1=None,\
-                cival1=95.0, mean2=None, sdev2=None, serror2=None, upperci2=None,\
-                lowerci2=None, cival2=95.0, mean3=None, sdev3=None, serror3=None,\
-                upperci3=None, lowerci3=None, cival3=95.0, size=1000):
+def compounddata(mean1=None, sdev1=None, serror1=None, upperci1=None, \
+                lowerci1=None, cival1=95.0, mean2=None, sdev2=None, \
+                serror2=None, upperci2=None, lowerci2=None, cival2=95.0, \
+                mean3=None, sdev3=None, serror3=None, upperci3=None, \
+                lowerci3=None, cival3=95.0, size=1000):
     """
     A partial wrapper function to generate three datasets of similar
     attributes.
     Parameters:
         mean1(int/float, optional): The mean.
-        sdev1, sdev2, sdev3 (int/float, optional): The standard deviation
-            of the datato be generated.
-        serror1, serror2, serror3 (int/float, optional): The standard error of the data to
-            be generated.
-        lowerci1 (int/float, optional): The lower bound of the
-            confidence interval.
-        upperci1 (int/float, optional): The upper bound of the
-            confidence interval.
+        sdev1, sdev2, sdev3 (int/float, optional): The standard
+            deviation of the data to be generated.
+        serror1, serror2, serror3 (int/float, optional): The standard
+            error of the data to be generated.
+        lowerci1, lowerci2, lowerci3 (int/float, optional): The lower
+            bound of the confidence interval.
+        upperci1, upperci2, upperci3 (int/float, optional): The upper
+            bound of the confidence interval.
         cival1 (float, optional): The upper bound of the confidence
             interval.
 
@@ -151,16 +153,22 @@ def compounddata(mean1=None, sdev1=None, serror1=None, upperci1=None, lowerci1=N
         numpy.ndarray: A numpy array with random standard distribution
             data.
     """
-    flmean1, flsdev1, flserror1, flupperci1, fllowerci1 = correctdatatype(mean1, \
-                                                                    sdev1, serror1, \
+    flmean1, flsdev1, flserror1, flupperci1, fllowerci1 = correctdatatype(\
+                                                                    mean1, \
+                                                                    sdev1, \
+                                                                    serror1, \
                                                                     upperci1, \
                                                                     lowerci1)
-    flmean2, flsdev2, flserror2, flupperci2, fllowerci2 = correctdatatype(mean2, \
-                                                                    sdev2, serror2, \
+    flmean2, flsdev2, flserror2, flupperci2, fllowerci2 = correctdatatype(\
+                                                                    mean2, \
+                                                                    sdev2, \
+                                                                    serror2, \
                                                                     upperci2, \
                                                                     lowerci2)
-    flmean3, flsdev3, flserror3, flupperci3, fllowerci3 = correctdatatype(mean3, \
-                                                                    sdev3, serror3, \
+    flmean3, flsdev3, flserror3, flupperci3, fllowerci3 = correctdatatype(
+                                                                    mean3, \
+                                                                    sdev3, \
+                                                                    serror3, \
                                                                     upperci3, \
                                                                     lowerci3)
 
@@ -338,8 +346,8 @@ def violinplotting(datagenerated1, datagenerated2, datagenerated3):
 
     return None
 
-def percent_overlap(mean1=None, sdev1=None, mean2=None, sdev2=None, mean3=None, \
-                    sdev3=None):
+def percent_overlap(mean1=None, sdev1=None, mean2=None, sdev2=None, \
+                    mean3=None, sdev3=None):
     """
     A function to estimate the percentage of overlap between multiple
     normally distributed data.
@@ -348,7 +356,6 @@ def percent_overlap(mean1=None, sdev1=None, mean2=None, sdev2=None, mean3=None, 
         mean2 (float, required): The mean of the second data set.
         mean3 (float, required): The mean of the third data set.
         sdev1 (float, required): The standard deviation of the first
-            data set.
         sdev2 (float, required): The standard deviation of the second
             data set.
         sdev3 (float, required): The standard deviation of the third
