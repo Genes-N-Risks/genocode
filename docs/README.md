@@ -20,3 +20,11 @@ By providing relevant scientific articles, the GenoCode
 website helps Julain to understand that type 2 diabetes risk
 is largely driven by environmental and lifestyle factors that
 he/she is able to control.
+
+### There are several uses for this GenoCode tool:
+
+1.	Julian will import his/her own genetic data in a protected and user-friendly web interface 
+2.	Julian will be able to visualize complex statistical data in a way that’s easily understandable
+3.	An accurate disease risk score will be evaluated for Julian with full transparency on the data resources used for prediction
+4.	Relevant scientific articles on the phenotype evaluated will be provided to help Julian understand that the risk is largely driven by environmental and lifestyle factors that he/she can control
+
