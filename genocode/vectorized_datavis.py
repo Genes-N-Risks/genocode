@@ -334,8 +334,8 @@ def percent_overlap(mean=None, sdev=None):
     overlap_perc_1w = np.empty(count, dtype=object)
     for i in range(count):
         overlap_perc_1w[i] = 'The overlap between dataset 1 and dataset '\
-                            +str(i)+' is {0:1.2%}'.format(NormalDist(mu=mean[i]\
-                            , sigma=sdev[i]).overlap(NormalDist(mu=mean[i], \
+                            +str(i+1)+' is {0:1.2%}'.format(NormalDist(mu=mean[0]\
+                            , sigma=sdev[0]).overlap(NormalDist(mu=mean[i], \
                             sigma=sdev[i])))
 
     return overlap_perc_1w
