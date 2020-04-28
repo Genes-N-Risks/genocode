@@ -1,4 +1,5 @@
 # Genocode
+[![Build Status](https://travis-ci.org/Genes-N-Risks/genocode.svg?branch=master)](https://travis-ci.org/Genes-N-Risks/genocode)
 [![PyPI license](https://img.shields.io/pypi/l/ansicolortags.svg)](https://pypi.python.org/pypi/ansicolortags/)
 [![HitCount](http://hits.dwyl.com/Genes-N-Risks/genocode.svg)](http://hits.dwyl.com/Genes-N-Risks/genocode)
 ## Webtool with synthetic datasets to better understand health risks associated with common genetic polymorphisms
