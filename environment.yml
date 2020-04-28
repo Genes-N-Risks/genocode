@@ -1,0 +1,14 @@
+name: genocode
+dependencies:
+  - dash
+  - pandas
+  - seaborn
+  - scikit-learn
+  - scipy
+  - statistics
+  - sys
+  - numpy
+  - math
+  - matplotlib
+  - plotly
+
