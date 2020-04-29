@@ -6,9 +6,7 @@ dependencies:
   - scikit-learn
   - scipy
   - statistics
-  - sys
   - numpy
-  - math
   - matplotlib
   - plotly
 
