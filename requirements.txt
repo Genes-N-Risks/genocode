@@ -1,6 +1,5 @@
 numpy
 pandas
-math
 matplotlib
 seaborn
 statistics
