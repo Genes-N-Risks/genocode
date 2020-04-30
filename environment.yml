@@ -1,10 +1,8 @@
 name: genocode
-
 channels:
   - dash
   - conda-forge
   - defaults
-  
 dependencies:
   - dash
   - ipython
@@ -15,7 +13,7 @@ dependencies:
   - jupyter_console
   - jupyter_core
   - matplotlib
-   - mkl
+  - mkl
   - mkl-service
   - mkl_fft
   - mkl_random
@@ -38,7 +36,6 @@ dependencies:
   - statistics
   - testpath
   - tk
-  
   - pip:
     - contextlib2
     - google-images-download
