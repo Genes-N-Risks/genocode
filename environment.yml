@@ -1,12 +1,49 @@
 name: genocode
+
+channels:
+  - dash
+  - conda-forge
+  - defaults
+  
 dependencies:
   - dash
+  - ipython
+  - ipython_genutils
+  - ipywidgets
+  - jupyter
+  - jupyter_client
+  - jupyter_console
+  - jupyter_core
+  - matplotlib
+   - mkl
+  - mkl-service
+  - mkl_fft
+  - mkl_random
+  - notebook
+  - numpy
+  - numpy-base
+  - opencv
   - pandas
-  - seaborn
+  - pandoc
+  - pillow
+  - pip
+  - plotly
+  - python
   - scikit-learn
   - scipy
+  - seaborn
+  - setuptools
+  - sqlite
+  - sqlalchemy
   - statistics
-  - numpy
-  - matplotlib
-  - plotly
-
+  - testpath
+  - tk
+  
+  - pip:
+    - contextlib2
+    - google-images-download
+    - opt-einsum
+    - pyro-ppl
+    - selenium
+    - tqdm
+    - urllib3
