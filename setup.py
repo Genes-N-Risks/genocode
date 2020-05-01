@@ -11,7 +11,7 @@ setup(  name = "genocode",
 
         url = "https://github.com/Genes-N-Risks/genocode",
         author = "Yousef Baioumy, Saransh Jain, Jinrong Ma, July Zhou ",
-        author_email = "baioumyy@uw.edu, saranshj@uw.edu, majorn@uw.edu, qiongz@uw.edu"
+        author_email = "baioumyy@uw.edu, saranshj@uw.edu, majorn@uw.edu, qiongz@uw.edu",
         maintainer = "Yousef Baioumy",
         maintainer_email = "baioumyy@uw.edu",
 
