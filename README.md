@@ -40,9 +40,7 @@ Functions present within the program/webtool:
 ```
 
 #### Activating the virtual environment
-```
-pip install git+https://github.com/Genes-N-Risks/genocode.git
-```
+`pip install git+https://github.com/Genes-N-Risks/genocode.git`
 
 ### Using genocode
 
