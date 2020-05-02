@@ -42,7 +42,7 @@ setup(  name = "genocode",
         install_requires = [ 'numpy',
                              'pandas',
                              'matplotlib',
-                             'seaborn'
+                             'seaborn',
                              'statistics'
                             ],
         entry_points = {
