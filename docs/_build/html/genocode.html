@@ -1,0 +1,877 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>genocode package &mdash; genocode July 12, 2020 documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+  <script type="text/javascript" src="_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+        <script src="_static/jquery.js"></script>
+        <script src="_static/underscore.js"></script>
+        <script src="_static/doctools.js"></script>
+        <script src="_static/language_data.js"></script>
+    
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="prev" title="genocode" href="modules.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="index.html" class="icon icon-home"> genocode
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="modules.html">genocode</a><ul class="current">
+<li class="toctree-l2 current"><a class="current reference internal" href="#">genocode package</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#submodules">Submodules</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#module-genocode.data_extract">Data Extraction</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#module-genocode.datavis">Data Visualization</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#module-genocode.vectorized_datavis">Vectorized Data Visualization</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">genocode</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="modules.html">genocode</a> &raquo;</li>
+        
+      <li>genocode package</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="_sources/genocode.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="genocode-package">
+<h1>genocode package<a class="headerlink" href="#genocode-package" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="submodules">
+<h2>Submodules<a class="headerlink" href="#submodules" title="Permalink to this headline">¶</a></h2>
+</div>
+<div class="section" id="module-genocode.data_extract">
+<span id="data-extraction"></span><h2>Data Extraction<a class="headerlink" href="#module-genocode.data_extract" title="Permalink to this headline">¶</a></h2>
+<p>This file contains functions for data
+extraction, conversion, and cleaning</p>
+<dl class="py function">
+<dt id="genocode.data_extract.txt_to_csv">
+<code class="sig-prename descclassname">genocode.data_extract.</code><code class="sig-name descname">txt_to_csv</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">txt_filepath</span></em>, <em class="sig-param"><span class="n">csv_filepath</span></em><span class="sig-paren">)</span><a class="headerlink" href="#genocode.data_extract.txt_to_csv" title="Permalink to this definition">¶</a></dt>
+<dd><p>converts a .txt data file to a .csv
+data file and cleans the formatting
+:param txt_filepath: The .txt file to be converted
+:type txt_filepath: required
+:param csv_filepath: The .csv output data to be written
+:type csv_filepath: required</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>A pandas DataFrame.</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>pandas.core.frame.DataFrame</p>
+</dd>
+</dl>
+</dd></dl>
+
+</div>
+<div class="section" id="module-genocode.datavis">
+<span id="data-visualization"></span><h2>Data Visualization<a class="headerlink" href="#module-genocode.datavis" title="Permalink to this headline">¶</a></h2>
+<p>This file contains functions which can be used to visualize the graphical
+representation of the statistical data generated by DTC genetic tests. It gives
+a better understanding of the risk of genotypes posed by the phenotypes in a
+person.</p>
+<dl class="py function">
+<dt id="genocode.datavis.ci_to_sd">
+<code class="sig-prename descclassname">genocode.datavis.</code><code class="sig-name descname">ci_to_sd</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">lowerci</span></em>, <em class="sig-param"><span class="n">upperci</span></em>, <em class="sig-param"><span class="n">cival</span><span class="o">=</span><span class="default_value">95.0</span></em>, <em class="sig-param"><span class="n">size</span><span class="o">=</span><span class="default_value">100</span></em><span class="sig-paren">)</span><a class="headerlink" href="#genocode.datavis.ci_to_sd" title="Permalink to this definition">¶</a></dt>
+<dd><p>Converts Confidence interval to Mean and Standard deviation.
+:param lowerci: The lower bound of the confidence</p>
+<blockquote>
+<div><p>interval.</p>
+</div></blockquote>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>upperci</strong> (<em>float</em><em>, </em><em>required</em>) – The upper bound of the confidence
+interval.</p></li>
+<li><p><strong>cival</strong> (<em>float</em><em>, </em><em>optional</em>) – The confidence level.
+It must be one of the following values.
+[99.9,99.5,99.0,95.0,90.0,85.0,80.0]
+The default value is 95 for 95% confidence interval.</p></li>
+<li><p><strong>size</strong> (<em>int</em><em>, </em><em>optional</em>) – The size of the sample to be generated.
+The default value is 100.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>A float value for Standard deviation.</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>float</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt id="genocode.datavis.compounddata">
+<code class="sig-prename descclassname">genocode.datavis.</code><code class="sig-name descname">compounddata</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">mean1</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">sdev1</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">serror1</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">upperci1</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">lowerci1</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">cival1</span><span class="o">=</span><span class="default_value">95.0</span></em>, <em class="sig-param"><span class="n">mean2</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">sdev2</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">serror2</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">upperci2</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">lowerci2</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">cival2</span><span class="o">=</span><span class="default_value">95.0</span></em>, <em class="sig-param"><span class="n">mean3</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">sdev3</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">serror3</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">upperci3</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">lowerci3</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">cival3</span><span class="o">=</span><span class="default_value">95.0</span></em>, <em class="sig-param"><span class="n">size</span><span class="o">=</span><span class="default_value">1000</span></em><span class="sig-paren">)</span><a class="headerlink" href="#genocode.datavis.compounddata" title="Permalink to this definition">¶</a></dt>
+<dd><p>A partial wrapper function to generate three datasets of similar
+attributes.
+:param mean1: The mean.
+:type mean1: int/float, optional
+:param sdev1, sdev2, sdev3: The standard</p>
+<blockquote>
+<div><p>deviation of the data to be generated.</p>
+</div></blockquote>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>serror2</strong><strong>, </strong><strong>serror3</strong> (<em>serror1</em><em>,</em>) – The standard
+error of the data to be generated.</p></li>
+<li><p><strong>lowerci2</strong><strong>, </strong><strong>lowerci3</strong> (<em>lowerci1</em><em>,</em>) – The lower
+bound of the confidence interval.</p></li>
+<li><p><strong>upperci2</strong><strong>, </strong><strong>upperci3</strong> (<em>upperci1</em><em>,</em>) – The upper
+bound of the confidence interval.</p></li>
+<li><p><strong>cival1</strong> (<em>float</em><em>, </em><em>optional</em>) – The upper bound of the confidence
+interval.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p><dl class="simple">
+<dt>A numpy array with random standard distribution</dt><dd><p>data.</p>
+</dd>
+<dt>numpy.ndarray: A numpy array with random standard distribution</dt><dd><p>data.</p>
+</dd>
+<dt>numpy.ndarray: A numpy array with random standard distribution</dt><dd><p>data.</p>
+</dd>
+</dl>
+</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>numpy.ndarray</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt id="genocode.datavis.correctdatatype">
+<code class="sig-prename descclassname">genocode.datavis.</code><code class="sig-name descname">correctdatatype</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">mean</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">sdev</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">serror</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">upperci</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">lowerci</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="headerlink" href="#genocode.datavis.correctdatatype" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns float values for each statistical parameter.
+:param mean: The mean.
+:type mean: int, optional
+:param sdev: The standard deviation of the data to be</p>
+<blockquote>
+<div><p>generated.</p>
+</div></blockquote>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>serror</strong> (<em>int</em><em>, </em><em>optional</em>) – The standard error of the data to be
+generated.</p></li>
+<li><p><strong>lowerci</strong> (<em>int</em><em>, </em><em>required</em>) – The lower bound of the confidence
+interval.</p></li>
+<li><p><strong>upperci</strong> (<em>int</em><em>, </em><em>required</em>) – The upper bound of the confidence
+interval.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>A float value for mean.
+float: A float value for sd.
+float: A float value for se.
+float: A float value for lowerci.
+float: A float value for upperci.</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>float</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt id="genocode.datavis.databinning">
+<code class="sig-prename descclassname">genocode.datavis.</code><code class="sig-name descname">databinning</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">datagenerated1</span></em>, <em class="sig-param"><span class="n">datagenerated2</span></em>, <em class="sig-param"><span class="n">datagenerated3</span></em>, <em class="sig-param"><span class="n">bins_list</span></em><span class="sig-paren">)</span><a class="headerlink" href="#genocode.datavis.databinning" title="Permalink to this definition">¶</a></dt>
+<dd><p>A function to create 3 histogram bins.
+:param datagenerated1: A numpy array with</p>
+<blockquote>
+<div><p>random standard distribution data.</p>
+</div></blockquote>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>datagenerated2</strong> (<em>numpy.ndarray</em><em>, </em><em>required</em>) – A numpy array with
+random standard distribution data.</p></li>
+<li><p><strong>datagenerated3</strong> (<em>numpy.ndarray</em><em>, </em><em>required</em>) – A numpy array with
+random standard distribution data.</p></li>
+<li><p><strong>bins_list</strong> (<em>numpy.ndarray</em><em>, </em><em>required</em>) – A numpy array listing the
+edges of the bins.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>The values of first histograms.
+numpy.ndarray: The values of second histograms.
+numpy.ndarray: The values of third histograms.</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>numpy.ndarray</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt id="genocode.datavis.datagen">
+<code class="sig-prename descclassname">genocode.datavis.</code><code class="sig-name descname">datagen</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">mean</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">sdev</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">serror</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">lowerci</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">upperci</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">cival</span><span class="o">=</span><span class="default_value">95.0</span></em>, <em class="sig-param"><span class="n">size</span><span class="o">=</span><span class="default_value">100</span></em><span class="sig-paren">)</span><a class="headerlink" href="#genocode.datavis.datagen" title="Permalink to this definition">¶</a></dt>
+<dd><p>Generates random standard distribution data from mean and standard
+deviation.
+:param mean: The mean of the data to be generated.
+:type mean: float, required
+:param sdev: The standard deviation of the data to be</p>
+<blockquote>
+<div><p>generated.</p>
+</div></blockquote>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>serror</strong> (<em>float</em><em>, </em><em>optional</em>) – The standard error of the data to be
+generated.</p></li>
+<li><p><strong>lowerci</strong> (<em>float</em><em>, </em><em>required</em>) – The lower bound of the confidence
+interval.</p></li>
+<li><p><strong>upperci</strong> (<em>float</em><em>, </em><em>required</em>) – The upper bound of the confidence
+interval.</p></li>
+<li><p><strong>cival</strong> (<em>float</em><em>, </em><em>optional</em>) – The confidence level.
+It must be one of the following values.
+[99.9,99.5,99.0,95.0,90.0,85.0,80.0]
+The default value is 95 for 95% confidence interval.</p></li>
+<li><p><strong>size</strong> (<em>int</em><em>, </em><em>optional</em>) – The size of the sample to be generated.
+The default value is 100.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>A numpy array with random standard distribution
+data.</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>numpy.ndarray</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt id="genocode.datavis.histplotting">
+<code class="sig-prename descclassname">genocode.datavis.</code><code class="sig-name descname">histplotting</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">datagenerated1</span></em>, <em class="sig-param"><span class="n">datagenerated2</span></em>, <em class="sig-param"><span class="n">datagenerated3</span></em>, <em class="sig-param"><span class="n">bins_list</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="headerlink" href="#genocode.datavis.histplotting" title="Permalink to this definition">¶</a></dt>
+<dd><p>A function to plot 3 overlapping histograms
+:param datagenerated1: A numpy array with</p>
+<blockquote>
+<div><p>random standard distribution data.</p>
+</div></blockquote>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>datagenerated2</strong> (<em>numpy.ndarray</em><em>, </em><em>required</em>) – A numpy array with
+random standard distribution data.</p></li>
+<li><p><strong>datagenerated3</strong> (<em>numpy.ndarray</em><em>, </em><em>required</em>) – A numpy array with
+random standard distribution data.</p></li>
+<li><p><strong>bins_list</strong> (<em>numpy.ndarray</em><em>, </em><em>required</em>) – A numpy array listing the
+edges of the bins.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>None.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt id="genocode.datavis.pdfgen">
+<code class="sig-prename descclassname">genocode.datavis.</code><code class="sig-name descname">pdfgen</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">mean1</span></em>, <em class="sig-param"><span class="n">sdev1</span></em>, <em class="sig-param"><span class="n">mean2</span></em>, <em class="sig-param"><span class="n">sdev2</span></em>, <em class="sig-param"><span class="n">mean3</span></em>, <em class="sig-param"><span class="n">sdev3</span></em>, <em class="sig-param"><span class="n">bins_list</span></em><span class="sig-paren">)</span><a class="headerlink" href="#genocode.datavis.pdfgen" title="Permalink to this definition">¶</a></dt>
+<dd><p>A function to generate 3 probability density function data
+:param mean1: The mean of the first dataset.
+:type mean1: float, required
+:param mean2: The mean of the second dataset.
+:type mean2: float, required
+:param mean3: The mean of the third dataset.
+:type mean3: float, required
+:param sdev1: The standard deviation of the first</p>
+<blockquote>
+<div><p>dataset</p>
+</div></blockquote>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>sdev2</strong> (<em>float</em><em>, </em><em>required</em>) – The standard deviation of the second
+dataset</p></li>
+<li><p><strong>sdev3</strong> (<em>float</em><em>, </em><em>required</em>) – The standard deviation of the third
+dataset</p></li>
+<li><p><strong>bins_list</strong> (<em>numpy.ndarray</em><em>, </em><em>required</em>) – A numpy array listing the
+edges of the bins.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>None.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt id="genocode.datavis.pdfplotting">
+<code class="sig-prename descclassname">genocode.datavis.</code><code class="sig-name descname">pdfplotting</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">mean1</span></em>, <em class="sig-param"><span class="n">sdev1</span></em>, <em class="sig-param"><span class="n">mean2</span></em>, <em class="sig-param"><span class="n">sdev2</span></em>, <em class="sig-param"><span class="n">mean3</span></em>, <em class="sig-param"><span class="n">sdev3</span></em>, <em class="sig-param"><span class="n">bins_list</span></em><span class="sig-paren">)</span><a class="headerlink" href="#genocode.datavis.pdfplotting" title="Permalink to this definition">¶</a></dt>
+<dd><p>A function to plot 3 overlapping probability density function
+curves.
+:param datagenerated1: A numpy array with</p>
+<blockquote>
+<div><p>random standard distribution data.</p>
+</div></blockquote>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>datagenerated2</strong> (<em>numpy.ndarray</em><em>, </em><em>required</em>) – A numpy array with
+random standard distribution data.</p></li>
+<li><p><strong>datagenerated3</strong> (<em>numpy.ndarray</em><em>, </em><em>required</em>) – A numpy array with
+random standard distribution data.</p></li>
+<li><p><strong>bins_list</strong> (<em>numpy.ndarray</em><em>, </em><em>required</em>) – A numpy array listing the
+edges of the bins.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>None.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt id="genocode.datavis.percent_overlap">
+<code class="sig-prename descclassname">genocode.datavis.</code><code class="sig-name descname">percent_overlap</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">mean1</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">sdev1</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">mean2</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">sdev2</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">mean3</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">sdev3</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="headerlink" href="#genocode.datavis.percent_overlap" title="Permalink to this definition">¶</a></dt>
+<dd><p>A function to estimate the percentage of overlap between multiple
+normally distributed data.
+:param mean1: The mean of the first data set.
+:type mean1: float, required
+:param mean2: The mean of the second data set.
+:type mean2: float, required
+:param mean3: The mean of the third data set.
+:type mean3: float, required
+:param sdev1: The standard deviation of the first
+:type sdev1: float, required
+:param sdev2: The standard deviation of the second</p>
+<blockquote>
+<div><p>data set.</p>
+</div></blockquote>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>sdev3</strong> (<em>float</em><em>, </em><em>required</em>) – The standard deviation of the third
+data set.</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p><dl class="simple">
+<dt>A float value showing the percentage overlap</dt><dd><p>between 1st and 2nd data sets.</p>
+</dd>
+<dt>numpy.float64: A float value showing the percentage overlap</dt><dd><p>between 1st and 3rd data sets.</p>
+</dd>
+<dt>numpy.float64: A float value showing the percentage overlap</dt><dd><p>between 2nd and 3rd data sets.</p>
+</dd>
+</dl>
+</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>numpy.float64</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt id="genocode.datavis.se_to_sd">
+<code class="sig-prename descclassname">genocode.datavis.</code><code class="sig-name descname">se_to_sd</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">serror</span></em>, <em class="sig-param"><span class="n">size</span></em><span class="sig-paren">)</span><a class="headerlink" href="#genocode.datavis.se_to_sd" title="Permalink to this definition">¶</a></dt>
+<dd><p>Converts Standard Error to Standard deviation.
+:param serror: The standard error of the data to be</p>
+<blockquote>
+<div><p>generated.</p>
+</div></blockquote>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>size</strong> (<em>float</em><em>, </em><em>required</em>) – The size of the population.</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>A float value for the standard deviation.</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>float</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt id="genocode.datavis.violinplotting">
+<code class="sig-prename descclassname">genocode.datavis.</code><code class="sig-name descname">violinplotting</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">datagenerated1</span></em>, <em class="sig-param"><span class="n">datagenerated2</span></em>, <em class="sig-param"><span class="n">datagenerated3</span></em><span class="sig-paren">)</span><a class="headerlink" href="#genocode.datavis.violinplotting" title="Permalink to this definition">¶</a></dt>
+<dd><p>A function to plot 3 consecutive violin plots
+:param datagenerated1: A numpy array with</p>
+<blockquote>
+<div><p>random standard distribution data.</p>
+</div></blockquote>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>datagenerated2</strong> (<em>numpy.ndarray</em><em>, </em><em>required</em>) – A numpy array with
+random standard distribution data.</p></li>
+<li><p><strong>datagenerated3</strong> (<em>numpy.ndarray</em><em>, </em><em>required</em>) – A numpy array with
+random standard distribution data.</p></li>
+<li><p><strong>bins_list</strong> (<em>numpy.ndarray</em><em>, </em><em>required</em>) – A numpy array listing the
+edges of the bins.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>None.</p>
+</dd>
+</dl>
+</dd></dl>
+
+</div>
+<div class="section" id="module-genocode.vectorized_datavis">
+<span id="vectorized-data-visualization"></span><h2>Vectorized Data Visualization<a class="headerlink" href="#module-genocode.vectorized_datavis" title="Permalink to this headline">¶</a></h2>
+<p>This file contains vectorized functions which can be used to visualize the graphical
+representation of the statistical data generated by DTC genetic tests. It gives
+a better understanding of the risk of genotypes posed by the phenotypes in a
+person.</p>
+<dl class="py function">
+<dt id="genocode.vectorized_datavis.ci_to_sd">
+<code class="sig-prename descclassname">genocode.vectorized_datavis.</code><code class="sig-name descname">ci_to_sd</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">lowerci</span></em>, <em class="sig-param"><span class="n">upperci</span></em>, <em class="sig-param"><span class="n">cival</span><span class="o">=</span><span class="default_value">95.0</span></em>, <em class="sig-param"><span class="n">size</span><span class="o">=</span><span class="default_value">100</span></em><span class="sig-paren">)</span><a class="headerlink" href="#genocode.vectorized_datavis.ci_to_sd" title="Permalink to this definition">¶</a></dt>
+<dd><p>Converts Confidence interval to Mean and Standard deviation.
+:param lowerci: The lower bound of the confidence</p>
+<blockquote>
+<div><p>interval.</p>
+</div></blockquote>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>upperci</strong> (<em>float</em><em>, </em><em>required</em>) – The upper bound of the confidence
+interval.</p></li>
+<li><p><strong>cival</strong> (<em>float</em><em>, </em><em>optional</em>) – The confidence level.
+It must be one of the following values.
+[99.9,99.5,99.0,95.0,90.0,85.0,80.0]
+The default value is 95 for 95% confidence interval.</p></li>
+<li><p><strong>size</strong> (<em>int</em><em>, </em><em>optional</em>) – The size of the sample to be generated.
+The default value is 100.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>A float value for Standard deviation.</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>float</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt id="genocode.vectorized_datavis.compounddata">
+<code class="sig-prename descclassname">genocode.vectorized_datavis.</code><code class="sig-name descname">compounddata</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">mean</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">sdev</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">serror</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">upperci</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">lowerci</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">cival</span><span class="o">=</span><span class="default_value">95.0</span></em>, <em class="sig-param"><span class="n">size</span><span class="o">=</span><span class="default_value">1000</span></em><span class="sig-paren">)</span><a class="headerlink" href="#genocode.vectorized_datavis.compounddata" title="Permalink to this definition">¶</a></dt>
+<dd><p>A partial wrapper function to generate three datasets of similar
+attributes.
+:param mean: The means.
+:type mean: numpy.ndarray, optional
+:param sdev: The standard deviations of the</p>
+<blockquote>
+<div><p>data to be generated.</p>
+</div></blockquote>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>serror</strong> (<em>numpy.ndarray</em><em>, </em><em>optional</em>) – The standard error of the
+data to be generated.</p></li>
+<li><p><strong>lowerci</strong> (<em>numpy.ndarray</em><em>, </em><em>optional</em>) – The lower bounds of the
+confidence interval.</p></li>
+<li><p><strong>upperci</strong> (<em>numpy.ndarray</em><em>, </em><em>optional</em>) – The upper bounds of the
+confidence interval.</p></li>
+<li><p><strong>cival</strong> (<em>float</em><em>, </em><em>optional</em>) – The confidence level.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p><dl class="simple">
+<dt>A numpy array with all the random standard</dt><dd><p>distribution data.</p>
+</dd>
+</dl>
+</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>numpy.ndarray</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt id="genocode.vectorized_datavis.correctdatatype">
+<code class="sig-prename descclassname">genocode.vectorized_datavis.</code><code class="sig-name descname">correctdatatype</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">mean</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">sdev</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">serror</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">upperci</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">lowerci</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="headerlink" href="#genocode.vectorized_datavis.correctdatatype" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns float values for each statistical parameter.
+:param mean: The mean.
+:type mean: int/str, optional
+:param sdev: The standard deviation of the data to be</p>
+<blockquote>
+<div><p>generated.</p>
+</div></blockquote>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>serror</strong> (<em>int/str</em><em>, </em><em>optional</em>) – The standard error of the data to be
+generated.</p></li>
+<li><p><strong>lowerci</strong> (<em>int/str</em><em>, </em><em>required</em>) – The lower bound of the confidence
+interval.</p></li>
+<li><p><strong>upperci</strong> (<em>int/str</em><em>, </em><em>required</em>) – The upper bound of the confidence
+interval.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>A float value for mean.
+float: A float value for sd.
+float: A float value for se.
+float: A float value for lowerci.
+float: A float value for upperci.</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>float</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt id="genocode.vectorized_datavis.databinning">
+<code class="sig-prename descclassname">genocode.vectorized_datavis.</code><code class="sig-name descname">databinning</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">datagenerated</span></em>, <em class="sig-param"><span class="n">bins_list</span></em><span class="sig-paren">)</span><a class="headerlink" href="#genocode.vectorized_datavis.databinning" title="Permalink to this definition">¶</a></dt>
+<dd><p>A function to create 3 histogram bins.
+:param datagenerated: A numpy array with</p>
+<blockquote>
+<div><p>random standard distribution data.</p>
+</div></blockquote>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>bins_list</strong> (<em>numpy.ndarray</em><em>, </em><em>required</em>) – A numpy array listing the
+edges of the bins.</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>The values of all the histograms.</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>numpy.ndarray</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt id="genocode.vectorized_datavis.datagen">
+<code class="sig-prename descclassname">genocode.vectorized_datavis.</code><code class="sig-name descname">datagen</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">mean</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">sdev</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">serror</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">lowerci</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">upperci</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">cival</span><span class="o">=</span><span class="default_value">95.0</span></em>, <em class="sig-param"><span class="n">size</span><span class="o">=</span><span class="default_value">100</span></em><span class="sig-paren">)</span><a class="headerlink" href="#genocode.vectorized_datavis.datagen" title="Permalink to this definition">¶</a></dt>
+<dd><p>Generates random standard distribution data from mean and standard
+deviation.
+:param mean: The mean of the data to be generated.
+:type mean: float, required
+:param sdev: The standard deviation of the data to be</p>
+<blockquote>
+<div><p>generated.</p>
+</div></blockquote>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>serror</strong> (<em>float</em><em>, </em><em>optional</em>) – The standard error of the data to be
+generated.</p></li>
+<li><p><strong>lowerci</strong> (<em>float</em><em>, </em><em>required</em>) – The lower bound of the confidence
+interval.</p></li>
+<li><p><strong>upperci</strong> (<em>float</em><em>, </em><em>required</em>) – The upper bound of the confidence
+interval.</p></li>
+<li><p><strong>cival</strong> (<em>float</em><em>, </em><em>optional</em>) – The confidence level.
+It must be one of the following values.
+[99.9,99.5,99.0,95.0,90.0,85.0,80.0]
+The default value is 95 for 95% confidence interval.</p></li>
+<li><p><strong>size</strong> (<em>int</em><em>, </em><em>optional</em>) – The size of the sample to be generated.
+The default value is 100.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>A numpy array with random standard distribution
+data.</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>numpy.ndarray</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt id="genocode.vectorized_datavis.histplotting">
+<code class="sig-prename descclassname">genocode.vectorized_datavis.</code><code class="sig-name descname">histplotting</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">datagenerated</span></em>, <em class="sig-param"><span class="n">bins_list</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="headerlink" href="#genocode.vectorized_datavis.histplotting" title="Permalink to this definition">¶</a></dt>
+<dd><p>A function to plot 3 overlapping histograms
+:param datagenerated: A numpy array with</p>
+<blockquote>
+<div><p>random standard distribution data.</p>
+</div></blockquote>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>bins_list</strong> (<em>numpy.ndarray</em><em>, </em><em>required</em>) – A numpy array listing the
+edges of the bins.</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>None.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt id="genocode.vectorized_datavis.pdfgen">
+<code class="sig-prename descclassname">genocode.vectorized_datavis.</code><code class="sig-name descname">pdfgen</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">mean</span></em>, <em class="sig-param"><span class="n">sdev</span></em>, <em class="sig-param"><span class="n">bins_list</span></em><span class="sig-paren">)</span><a class="headerlink" href="#genocode.vectorized_datavis.pdfgen" title="Permalink to this definition">¶</a></dt>
+<dd><p>A function to generate 3 probability density function data
+:param mean1: The means of the datasets.
+:type mean1: numpy.ndarray, required
+:param sdev1: The standard deviation of</p>
+<blockquote>
+<div><p>the dataset</p>
+</div></blockquote>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>bins_list</strong> (<em>numpy.ndarray</em><em>, </em><em>required</em>) – A numpy array listing the
+edges of the bins.</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>None.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt id="genocode.vectorized_datavis.pdfplotting">
+<code class="sig-prename descclassname">genocode.vectorized_datavis.</code><code class="sig-name descname">pdfplotting</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">mean</span></em>, <em class="sig-param"><span class="n">sdev</span></em>, <em class="sig-param"><span class="n">bins_list</span></em><span class="sig-paren">)</span><a class="headerlink" href="#genocode.vectorized_datavis.pdfplotting" title="Permalink to this definition">¶</a></dt>
+<dd><p>A function to plot 3 overlapping probability density function
+curves.
+:param datagenerated: A numpy array with</p>
+<blockquote>
+<div><p>random standard distribution data.</p>
+</div></blockquote>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>bins_list</strong> (<em>numpy.ndarray</em><em>, </em><em>required</em>) – A numpy array listing the
+edges of the bins.</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>None.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt id="genocode.vectorized_datavis.percent_overlap">
+<code class="sig-prename descclassname">genocode.vectorized_datavis.</code><code class="sig-name descname">percent_overlap</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">mean</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">sdev</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="headerlink" href="#genocode.vectorized_datavis.percent_overlap" title="Permalink to this definition">¶</a></dt>
+<dd><p>A function to estimate the percentage of overlap between multiple
+normally distributed data.
+:param mean: The means of the data sets.
+:type mean: numpy.ndarray, required
+:param sdev1: The standard deviations of</p>
+<blockquote>
+<div><p>the data sets.</p>
+</div></blockquote>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p><dl class="simple">
+<dt>An array with float values showing the</dt><dd><p>percentage overlap between 1st and the other data sets.</p>
+</dd>
+</dl>
+</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>numpy.ndarray</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt id="genocode.vectorized_datavis.se_to_sd">
+<code class="sig-prename descclassname">genocode.vectorized_datavis.</code><code class="sig-name descname">se_to_sd</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">serror</span></em>, <em class="sig-param"><span class="n">size</span></em><span class="sig-paren">)</span><a class="headerlink" href="#genocode.vectorized_datavis.se_to_sd" title="Permalink to this definition">¶</a></dt>
+<dd><p>Converts Standard Error to Standard deviation.
+:param serror: The standard error of the data to be</p>
+<blockquote>
+<div><p>generated.</p>
+</div></blockquote>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>size</strong> (<em>float</em><em>, </em><em>required</em>) – The size of the population.</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>A float value for the standard deviation.</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>float</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt id="genocode.vectorized_datavis.violinplotting">
+<code class="sig-prename descclassname">genocode.vectorized_datavis.</code><code class="sig-name descname">violinplotting</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">datagenerated</span></em><span class="sig-paren">)</span><a class="headerlink" href="#genocode.vectorized_datavis.violinplotting" title="Permalink to this definition">¶</a></dt>
+<dd><p>A function to plot 3 consecutive violin plots
+:param datagenerated: A numpy array with</p>
+<blockquote>
+<div><p>random standard distribution data.</p>
+</div></blockquote>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>bins_list</strong> (<em>numpy.ndarray</em><em>, </em><em>required</em>) – A numpy array listing the
+edges of the bins.</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>None.</p>
+</dd>
+</dl>
+</dd></dl>
+
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+      
+        <a href="modules.html" class="btn btn-neutral float-left" title="genocode" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2020, Yousef Baioumy, Saransh Jain, Jinrong Ma, July Zhou
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

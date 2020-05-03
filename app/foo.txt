@@ -1,5 +1,0 @@
-Before running app .py files, please install dash package
-Do this by running dash_set.sh
-
-Run .py files in terminal and copy generated URL
-Paste URL in your broswer and the app is ready to use

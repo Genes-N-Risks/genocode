@@ -1,3 +1,49 @@
-# genocode
+# Genocode
+[![Build Status](https://travis-ci.org/Genes-N-Risks/genocode.svg?branch=master)](https://travis-ci.org/Genes-N-Risks/genocode)
+[![Documentation Status](https://readthedocs.org/projects/genocode/badge/?version=latest)](https://genocode.readthedocs.io/en/latest/?badge=latest)
+[![Coverage Status](https://coveralls.io/repos/github/Genes-N-Risks/genocode/badge.svg?branch=master)](https://coveralls.io/github/Genes-N-Risks/genocode?branch=master)
+[![PyPI license](https://img.shields.io/pypi/l/ansicolortags.svg)](https://pypi.python.org/pypi/ansicolortags/)
+[![HitCount](http://hits.dwyl.com/Genes-N-Risks/genocode.svg)](http://hits.dwyl.com/Genes-N-Risks/genocode)
+## Webtool with synthetic datasets to better understand health risks associated with common genetic polymorphisms
+* This webtool will extract data from DTC genetic test outputs (e.g. 23andMe) and generate personalized data visualizations for a given individual.
+Functions present within the program/webtool:
+  *
+  *
+  *
 
-<iframe width="640" height="360" src="https://miro.com/app/embed/o9J_kueMq-E=/?" frameborder="0" scrolling="no" allowfullscreen></iframe>
+
+#### Repository Structure
+```
+  |- README.md
+  |- genocode/
+      |- __init__.py
+      |- tests/
+        |- __init__.py
+      |- data/
+        |- SNP.csv
+  |- doc/
+      |- README.md
+      |- GanttChart.ipynb
+      |- usage_cases.md
+  |- examples/
+      |- README.md
+      |- DataOperation.ipynb
+      |- DataOperation.example.ipynb
+      |- NormalDistribution.ipynb
+      |- NormalDistribution.example.ipynb
+  |- setup.py
+  |- .travis.yml
+  |- environment.yml
+  |- .gitignore
+  |- LICENSE
+
+```
+
+#### Activating the virtual environment
+`pip install git+https://github.com/Genes-N-Risks/genocode.git`
+
+### Using genocode
+
+### Example Output
+
+### Miscellaneous Notes
