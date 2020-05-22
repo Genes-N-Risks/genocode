@@ -18,9 +18,7 @@ def bmistat(filepath):
         n += 1
         if x in line:
             break
-    txt = pd.read_csv (filepath,'\s+', skiprows=n, names=['rsid','chromosome','position','genotype'])
-    txt.to_csv('../genome_Thomas_Wood.csv',index=False)
-    df = pd.read_csv('../genome_Thomas_Wood.csv')
+    df = pd.read_csv (filepath,'\s+', skiprows=n, names=['rsid','chromosome','position','genotype'])
     #df = df.replace('--', pd.NaT)  # need to correct this on the data extract file
     #df = df.dropna
     testfile = df[(df['rsid'] == 'rs9939609') | 
