@@ -5,11 +5,11 @@ from dash.dependencies import Input, Output
 from app import app
 
 layout = html.Div([
-    html.H1("Welcome to Gene 'n Risk"),
-    html.H2("Dear users, Gene 'n Risk provide you will personalliezed service of disease risk analysis!"),
-    html.H3(" Please click 'Sign in my consent form', to signup a consent form of yourself and upload your SNPs test result to get your personallized disease risk analysis"),
-    html.H3(" Please click 'Just go through statistic data of differnt disease', to look up statistic data"),
-    dcc.Link('Sign in my consent form', href='/consent'),
+    html.H1("Welcome to Genocode"),
+    html.H2("Genocode is a data visualization tool designed to help you understand the actual risk of diseases posed by your genetics! Customers of DNA testing services (Currently only 23andMe) use Genocode to learn more about their DNA variants."),
+    html.H3("Please sign the consent form in order to get your own personalized disease risk assessment."),
+    dcc.Link('Sign the consent form here', href='/consent'),
     html.Br(),
-    dcc.Link('Just go through statistic data of differnt disease', href='/statistic'),
+    html.H3("At Genocode, we believe in 100% transparency. To learn more about the statistical data which we use to identify and assess your risks, please click 'Statistic data of different diseases'"),
+    dcc.Link('Statistic data of different diseases', href='/statistic'),
 ])
