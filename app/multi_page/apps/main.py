@@ -10,6 +10,6 @@ layout = html.Div([
     html.H3("Please sign the consent form in order to get your own personalized disease risk assessment."),
     dcc.Link('Sign the consent form here', href='/consent'),
     html.Br(),
-    html.H3("At Genocode, we believe in 100% transparency. To learn more about the statistical data which we use to identify and assess your risks, please click 'Statistic data of different diseases'"),
+    html.H3("At Genocode, we believe in 100% transparency. To learn more about the statistical data which we use to identify and assess your risks, please click the link below"),
     dcc.Link('Statistic data of different diseases', href='/statistic'),
 ])
