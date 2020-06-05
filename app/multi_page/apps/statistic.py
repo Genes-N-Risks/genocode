@@ -8,6 +8,8 @@ from app import app
 
 import pandas as pd
 import numpy as np
+import scipy.stats as stats
+from scipy.stats import norm
 
 df1 = pd.read_csv('Polygenic Risk Scores Data.csv')
 
@@ -38,8 +40,7 @@ for i in range(df1.shape[0]):
 df = pd.read_csv('Genetic Data.csv')
 
 options={'BMI':[],
-         'T2D':[],
-         'Glucose':[]}
+         'T2D':[]}
 
 for i in range(df.shape[0]):
     if df.gene[i] in options[df.phenotype[i]]:
@@ -89,7 +90,7 @@ layout = html.Div([
     
     html.Div(id='stat-display-value'),
     
-    dcc.Link('Back to main page', href='main')
+    dcc.Link('Upload my 23&me file to get a personal analysis of my risk diesease', href='load')
 ])
 
 
@@ -112,44 +113,53 @@ def set_snps_value(available_options):
     [Input('disease-dropdown', 'value'),
      Input('snps-dropdown', 'value')])
 def display_value(disease, snps):
+    x1 = np.linspace(means[snps][0] - 3*stdevs[snps][0], means[snps][0] + 3*stdevs[snps][0], 100)
+    x2 = np.linspace(means[snps][1] - 3*stdevs[snps][1], means[snps][1] + 3*stdevs[snps][1], 100)
+    x3 = np.linspace(means[snps][2] - 3*stdevs[snps][2], means[snps][2] + 3*stdevs[snps][2], 100)
     return [dcc.Graph(
-        figure={
-            'data':[
-                {
-                    'name': genotype[snps][0],
-                    'type': 'violin',
-                    'y': np.random.normal(means[snps][0], stdevs[snps][0], 1000)
-                },
-                
-                {
-                    'name': genotype[snps][1],
-                    'type': 'violin',
-                    'y': np.random.normal(means[snps][1], stdevs[snps][1], 1000)
-                }, 
-                                
-                {
-                    'name': genotype[snps][2],
-                    'type': 'violin',
-                    'y': np.random.normal(means[snps][2], stdevs[snps][2], 1000)
+            figure={
+                'data':[
+                    {
+                        'name': genotype[snps][0],
+                        'type': 'line',
+                        'x': x1,
+                        'y': stats.norm.pdf(x1,means[snps][0], stdevs[snps][0])
+                    },
+
+                    {
+                        'name': genotype[snps][1],
+                        'type': 'line',
+                        'x': x2,
+                        'y': stats.norm.pdf(x2,means[snps][1], stdevs[snps][1])
+                    }, 
+
+                    {
+                        'name': genotype[snps][2],
+                        'type': 'line',
+                        'x': x3,
+                        'y': stats.norm.pdf(x3,means[snps][2], stdevs[snps][2])
+                    }
+                ],
+                'layout': {
+                    'title': 'Violin plot of {} variants'.format(snps)
                 }
-            ],
-            'layout': {
-                'title': 'Violin plot of {} variants'.format(snps)
             }
-        }
-    ),
-            
-            dcc.Graph(
-                figure=go.Figure(
-                    go.Bar(
-                            x=score[disease],
-                            y=amean[disease],
-                            error_y=dict(type='data', array=astdev[disease])
-                    )
-                    
-                )
-            )
-           ]
+        ),  
+        dcc.Graph(
+            figure={
+                'data':[
+                    {
+                        'name': score[disease][k]+'',
+                        'type': 'violin',
+                        'y': np.random.normal(amean[disease][k], astdev[disease][k], 1000)
+                    } for k in range(len(score[disease]))
+                ],
+                'layout': {
+                    'title': 'Polygenic risk scores distributuion of {}'.format(disease)
+                }
+            }
+        )
+               ]
 
 
 
