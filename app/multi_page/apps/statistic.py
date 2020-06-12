@@ -90,7 +90,7 @@ layout = html.Div([
     
     html.Div(id='stat-display-value'),
     
-    dcc.Link('Upload my 23&me file to get a personal analysis of my risk diesease', href='load')
+    dcc.Link('Upload my 23&me file', href='load')
 ])
 
 
