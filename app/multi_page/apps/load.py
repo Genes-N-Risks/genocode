@@ -115,7 +115,7 @@ def nordist_overlape(mu1, sigma1, mu2, sigma2):
     return area
 
 layout = html.Div([
-    html.H3('Please upload your 23&me txt file'),
+    html.H3('Please upload your 23&Me txt file'),
     dcc.Upload(
         id='upload-data',
         children=html.Div([
@@ -185,7 +185,7 @@ def update_output(list_of_contents, list_of_names):
         T2D_overlap = nordist_overlape(low_T2D_mean, low_T2D_stdev, user_T2D_mean, user_T2D_stdev)
         T2D_risk = round((1-T2D_overlap)*100, 2)
         
-        return [html.H3('Your BMI polygenic risk score is {}'.format(PGRS_bmi)),
+        return [html.H3('Your BMI polygenic risk score is {}'.format(round(PGRS_bmi,2))),
             dcc.Graph(
                 figure={
                     'data':[
@@ -200,11 +200,11 @@ def update_output(list_of_contents, list_of_names):
                     }
                 }
             ),
-            html.H4('Compare with database, you have {}% risk of BMI issue'.format(BMI_risk)),
+            html.H4('Compare with database, you have {}% risk of BMI issue'.format(round(BMI_risk,2))),
             html.Br(),
             html.Br(),
             html.Br(),
-            html.H3('Your type II diabetes polygenic risk score is {}'.format(PGRS_diabetes)),
+            html.H3('Your type II diabetes polygenic risk score is {}'.format(round(PGRS_diabetes,2))),
             dcc.Graph(
                 figure={
                     'data':[
@@ -219,7 +219,7 @@ def update_output(list_of_contents, list_of_names):
                     }
                 }
             ),
-            html.H4('Compare with database, you have {}% risk of type II diabetes issue'.format(T2D_risk)),
+            html.H4('Compare with database, you have {}% risk of type II diabetes issue'.format(round(T2D_risk,2))),
         ] 
     else:
         return 'No content in upload file.'
