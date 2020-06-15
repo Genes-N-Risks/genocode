@@ -10,6 +10,7 @@ import pandas as pd
 import numpy as np
 import scipy.stats as stats
 from scipy.stats import norm
+from statistics import NormalDist
 
 df1 = pd.read_csv('Polygenic Risk Scores Data.csv')
 
@@ -72,6 +73,9 @@ for i in range(df.shape[0]):
         genotype[df.gene[i]] = []
         genotype[df.gene[i]].append(df.genotype[i])
 
+xlabel = {'BMI':'Obesity Genetic Score', 'T2D':'Glucose Genetic Score'}
+ylabel = {'BMI':'BMI(kg/m2)', 'T2D':'Fasting glucose(mg/dl)'}
+
 layout = html.Div([
     html.H3('Statistic data'),
     
@@ -90,7 +94,7 @@ layout = html.Div([
     
     html.Div(id='stat-display-value'),
     
-    dcc.Link('Upload my 23&me file', href='load')
+    dcc.Link('Upload my 23&me file to get a personal analysis of my risk diesease', href='load')
 ])
 
 
@@ -116,6 +120,10 @@ def display_value(disease, snps):
     x1 = np.linspace(means[snps][0] - 3*stdevs[snps][0], means[snps][0] + 3*stdevs[snps][0], 100)
     x2 = np.linspace(means[snps][1] - 3*stdevs[snps][1], means[snps][1] + 3*stdevs[snps][1], 100)
     x3 = np.linspace(means[snps][2] - 3*stdevs[snps][2], means[snps][2] + 3*stdevs[snps][2], 100)
+    ol1 = 100*NormalDist(means[snps][0], stdevs[snps][0]).overlap(NormalDist(means[snps][1], stdevs[snps][1]))
+    ol1 = round(ol1,1)
+    ol2 = 100*NormalDist(means[snps][0], stdevs[snps][0]).overlap(NormalDist(means[snps][2], stdevs[snps][2]))
+    ol2 = round(ol2,1)
     return [dcc.Graph(
             figure={
                 'data':[
@@ -141,10 +149,19 @@ def display_value(disease, snps):
                     }
                 ],
                 'layout': {
-                    'title': 'Violin plot of {} variants'.format(snps)
+                    'title': 'Violin plot of {} variants'.format(snps),
+                    'yaxis':{
+                        'title':'Density'
+                    },
+                    'xaxis':{
+                        'title':'Polygenic Risk Score'
+                     }
                 }
             }
         ),  
+        html.H4('Overlap of single mutation {} and wild type {} is {}%'.format(genotype[snps][1],genotype[snps][0],ol1)), 
+        html.H4('Overlap of double mutation {} and wild type {} is {}%'.format(genotype[snps][2],genotype[snps][0],ol2)),
+        html.Br(),
         dcc.Graph(
             figure={
                 'data':[
@@ -155,7 +172,13 @@ def display_value(disease, snps):
                     } for k in range(len(score[disease]))
                 ],
                 'layout': {
-                    'title': 'Polygenic risk scores distributuion of {}'.format(disease)
+                    'title': 'Polygenic risk scores distributuion of {}'.format(disease),
+                    'yaxis':{
+                        'title':ylabel[disease]
+                    },
+                    'xaxis':{
+                        'title':xlabel[disease]
+                     }
                 }
             }
         )

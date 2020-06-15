@@ -52,6 +52,14 @@ def PGRS_contribution(df1,df2):
         contribution[k] = round(contribution[k]*factor,2)
     return contribution
 
+def error_contribution(df1,df2):
+    errors = {}
+    for i in range(len(df1)):
+        row = df2[(df2['rsid'] == df1['rsid'][i]) 
+                  & (df2['genotype'] == df1['genotype'][i])]
+        errors[df1['rsid'][i]] = row['effect_error'].values[0]/row['effect'].values[0]
+    return errors
+
 def get_BMI_statistic(score):
     if score <=3.5:
         return df_score['means'][0], df_score['sdev'][0]
@@ -114,8 +122,16 @@ def nordist_overlape(mu1, sigma1, mu2, sigma2):
     area = norm.cdf(r,mu2,sigma2) + (1.-norm.cdf(r,mu1,sigma1))
     return area
 
+rsid_genotype = {}  ## Dictionary where keys are rsid and values are genotype
+for i in range(df_statistic.shape[0]):
+    if df_statistic.rsid[i] in rsid_genotype.keys():
+        continue
+    else:
+        rsid_genotype[df_statistic.rsid[i]] = []        
+        rsid_genotype[df_statistic.rsid[i]].append(df_statistic.gene[i])  
+
 layout = html.Div([
-    html.H3('Please upload your 23&Me txt file'),
+    html.H3('Please upload your 23&me txt file'),
     dcc.Upload(
         id='upload-data',
         children=html.Div([
@@ -168,10 +184,21 @@ def update_output(list_of_contents, list_of_names):
         
         PGRS_bmi = calculate_PGRS(df_bmi, df_statistic)
         PGRS_bmi = round(PGRS_bmi/0.29*1.118056, 1)
-        contribution_bmi = PGRS_contribution(df_bmi, df_statistic)  
+        contribution_bmi = PGRS_contribution(df_bmi, df_statistic) 
+        error_bmi = error_contribution(df_bmi, df_statistic) 
+        
+        genotype_bmi = []      ##convert rsid to fully genotype name
+        for rsid in contribution_bmi.keys():
+            genotype_bmi.append(rsid_genotype[rsid][0])
+        
         PGRS_diabetes = calculate_PGRS(df_diabetes, df_statistic)
         PGRS_diabetes = round(PGRS_diabetes*1.2943, 1)  
         contribution_diabetes = PGRS_contribution(df_diabetes, df_statistic)
+        error_diabetes = error_contribution(df_diabetes, df_statistic)
+        
+        genotype_diabetes = []      ##convert rsid to fully genotype name
+        for rsid in contribution_diabetes.keys():
+            genotype_diabetes.append(rsid_genotype[rsid][0])
         
         user_BMI_mean, user_BMI_stdev = get_BMI_statistic(PGRS_bmi)
         low_BMI_mean = df_score['means'][0]
@@ -185,41 +212,61 @@ def update_output(list_of_contents, list_of_names):
         T2D_overlap = nordist_overlape(low_T2D_mean, low_T2D_stdev, user_T2D_mean, user_T2D_stdev)
         T2D_risk = round((1-T2D_overlap)*100, 2)
         
-        return [html.H3('Your BMI polygenic risk score is {}'.format(round(PGRS_bmi,2))),
+        return [html.H3('Your BMI polygenic risk score is {}'.format(PGRS_bmi)),
             dcc.Graph(
                 figure={
                     'data':[
                         {
-                        'x': list(contribution_bmi.keys()),
+                        'x': list(genotype_bmi),
                         'type': 'bar',
-                        'y': list(contribution_bmi.values())
+                        'y': list(contribution_bmi.values()),
+                        'error_y':{
+                            'array':list(error_bmi.values()),
+                            'type':'percent'
+                        }
                         } 
                     ],
                     'layout': {
-                        'title': 'Contributions of different SNPs to BMI Polygenic risk scores'
+                        'title': 'Contributions of different SNPs to BMI Polygenic risk scores',
+                    'yaxis':{
+                        'title':'Contributions'
+                    },
+                    'xaxis':{
+                        'title':'Genotypes'
+                     }
                     }
                 }
             ),
-            html.H4('Compare with database, you have {}% risk of BMI issue'.format(round(BMI_risk,2))),
+            html.H4('Compare with database, you have {}% risk of BMI issue'.format(BMI_risk)),
             html.Br(),
             html.Br(),
             html.Br(),
-            html.H3('Your type II diabetes polygenic risk score is {}'.format(round(PGRS_diabetes,2))),
+            html.H3('Your type II diabetes polygenic risk score is {}'.format(PGRS_diabetes)),
             dcc.Graph(
                 figure={
                     'data':[
                         {
-                        'x': list(contribution_diabetes.keys()),
+                        'x': list(genotype_diabetes),
                         'type': 'bar',
-                        'y': list(contribution_diabetes.values())
+                        'y': list(contribution_diabetes.values()),
+                        'error_y':{
+                            'array':list(error_diabetes.values()),
+                            'type':'percent'
+                        }
                         } 
                     ],
                     'layout': {
-                        'title': 'Contributions of different SNPs to type II diabetes Polygenic risk scores'
+                        'title': 'Contributions of different SNPs to type II diabetes Polygenic risk scores',
+                    'yaxis':{
+                        'title':'Contributions'
+                    },
+                    'xaxis':{
+                        'title':'Genotypes'
+                     }
                     }
                 }
             ),
-            html.H4('Compare with database, you have {}% risk of type II diabetes issue'.format(round(T2D_risk,2))),
+            html.H4('Compare with database, you have {}% risk of type II diabetes issue'.format(T2D_risk)),
         ] 
     else:
         return 'No content in upload file.'
