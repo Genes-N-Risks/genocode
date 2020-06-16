@@ -21,7 +21,7 @@ layout = html.Div([
     html.Br(),
     html.Br(),
     html.Br(),
-    dcc.Link('I have read the above information.', href='load'),
+    dcc.Link('I have read and agreed to the above information.', href='load'),
     html.Br(),
     dcc.Link('Back to main page', href='main')
 ])
