@@ -12,7 +12,7 @@ import scipy.stats as stats
 from scipy.stats import norm
 from statistics import NormalDist
 
-df1 = pd.read_csv('Polygenic Risk Scores Data.csv')
+df1 = pd.read_csv('https://raw.githubusercontent.com/Genes-N-Risks/genocode/master/app/multi_page/Polygenic%20Risk%20Scores%20Data.csv')
 
 score = {}
 for i in range(df1.shape[0]):
@@ -21,7 +21,7 @@ for i in range(df1.shape[0]):
     else:
         score[df1.phenotype[i]] = []
         score[df1.phenotype[i]].append(df1.score[i])
-        
+
 amean = {}
 for i in range(df1.shape[0]):
     if df1.phenotype[i] in amean.keys():
@@ -36,8 +36,8 @@ for i in range(df1.shape[0]):
         astdev[df1.phenotype[i]].append(df1.sdev[i])
     else:
         astdev[df1.phenotype[i]] = []
-        astdev[df1.phenotype[i]].append(df1.sdev[i])       
-        
+        astdev[df1.phenotype[i]].append(df1.sdev[i])
+
 df = pd.read_csv('Genetic Data.csv')
 
 options={'BMI':[],
@@ -48,7 +48,7 @@ for i in range(df.shape[0]):
         continue
     else:
         options[df.phenotype[i]].append(df.gene[i])
-        
+
 means = {}
 for i in range(df.shape[0]):
     if df.gene[i] in means.keys():
@@ -56,7 +56,7 @@ for i in range(df.shape[0]):
     else:
         means[df.gene[i]] = []
         means[df.gene[i]].append(df.means[i])
-        
+
 stdevs = {}
 for i in range(df.shape[0]):
     if df.gene[i] in stdevs.keys():
@@ -64,7 +64,7 @@ for i in range(df.shape[0]):
     else:
         stdevs[df.gene[i]] = []
         stdevs[df.gene[i]].append(df.sdev[i])
-        
+
 genotype = {}
 for i in range(df.shape[0]):
     if df.gene[i] in genotype.keys():
@@ -78,22 +78,22 @@ ylabel = {'BMI':'BMI(kg/m2)', 'T2D':'Fasting glucose(mg/dl)'}
 
 layout = html.Div([
     html.H3('Statistic data'),
-    
+
     dcc.Dropdown(
         id='disease-dropdown',
         options=[{'label': k, 'value': k} for k in options.keys()],
         value = 'BMI'
     ),
-    
+
     html.Hr(),
-    
+
     dcc.Dropdown(id='snps-dropdown'),
-    
+
     html.Hr(),
-    
-    
+
+
     html.Div(id='stat-display-value'),
-    
+
     dcc.Link('Analyze my own genetic test result', href='consent')
 ])
 
@@ -139,7 +139,7 @@ def display_value(disease, snps):
                         'type': 'line',
                         'x': x2,
                         'y': stats.norm.pdf(x2,means[snps][1], stdevs[snps][1])
-                    }, 
+                    },
 
                     {
                         'name': genotype[snps][2],
@@ -158,8 +158,8 @@ def display_value(disease, snps):
                      }
                 }
             }
-        ),  
-        html.H4('Overlap of single mutation {} and wild type {} is {}%'.format(genotype[snps][1],genotype[snps][0],ol1)), 
+        ),
+        html.H4('Overlap of single mutation {} and wild type {} is {}%'.format(genotype[snps][1],genotype[snps][0],ol1)),
         html.H4('Overlap of double mutation {} and wild type {} is {}%'.format(genotype[snps][2],genotype[snps][0],ol2)),
         html.Br(),
         dcc.Graph(
@@ -183,16 +183,3 @@ def display_value(disease, snps):
             }
         )
                ]
-
-
-
-
-
-
-
-
-
-
-
-
-
