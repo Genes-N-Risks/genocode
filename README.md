@@ -5,7 +5,8 @@
 [![PyPI license](https://img.shields.io/pypi/l/ansicolortags.svg)](https://pypi.python.org/pypi/ansicolortags/)
 [![HitCount](http://hits.dwyl.com/Genes-N-Risks/genocode.svg)](http://hits.dwyl.com/Genes-N-Risks/genocode)
 ## Webtool with synthetic datasets to better understand health risks associated with common genetic polymorphisms
-* This webtool will extract data from DTC genetic test outputs (e.g. 23andMe) and generate personalized data visualizations for a given individual.
+* Our webtool allows users to privately upload their genetic test data, identify risk genes that they are concerned about, and be shown outputs of normally-distributed synthetic data that describes the full possible range of phenotypes for a given genotype. Hundreds of common single nucleotide polymorphisms (SNPs) are associated with altered risk of common diseases and health risks; however, these are based on average health data that incompletely describes the variability of the population and the true risk of a SNP being associated with an outcome in a given individual. We designed a user-friendly web-tool GenoCode using synthetic datasets that we collected from published literature to help users better understand their health risks associated with common genetic polymorphisms from their direct-to-consumer genetic test.
+
 
 
 
@@ -58,12 +59,18 @@ pre-suited to run `genocode`
   * To activate the virtual environment:
   `conda activate genocode_env`
   * The environment contains:
-    * Python 3.8 from miniconda3
+    * python == 3.8 
+    * plotly
+    * dash
+    * dash-core-components
+    * dash-html-components
+    * dash-renderer
     * numpy
     * pandas
     * matplotlib
-
-`pip install git+https://github.com/Genes-N-Risks/genocode.git`
+    * scipy
+    * statistics
+   
 
 ### Using genocode
 * Before using
