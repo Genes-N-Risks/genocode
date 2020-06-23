@@ -149,7 +149,7 @@ def display_value(disease, snps):
                     }
                 ],
                 'layout': {
-                    'title': 'Violin plot of {} variants'.format(snps),
+                    'title': 'Normal distributions of {} variants'.format(snps),
                     'yaxis':{
                         'title':'Density'
                     },

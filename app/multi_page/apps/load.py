@@ -30,7 +30,7 @@ def search_bmi(df):
 def search_diabetes(df):
     array = ['rs560887','rs10830963','rs14607517','rs2191349','rs780094','rs11708067',
            'rs7944584','rs10885122','rs174550','rs11605924','rs11920090','rs7034200',
-            'rs340874','rs11071657','rs13266634','rs7903146','rs35767']
+            'rs340874','rs11071657']
     df = df.loc[df['rsid'].isin(array)]
     return df
 
@@ -59,9 +59,12 @@ def PGRS_contribution(df1,df2):
 def error_contribution(df1,df2):
     errors = {}
     for i in range(len(df1)):
-        row = df2[(df2['rsid'] == df1['rsid'][i])
+        row = df2[(df2['rsid'] == df1['rsid'][i]) 
                   & (df2['genotype'] == df1['genotype'][i])]
-        errors[df1['rsid'][i]] = row['effect_error'].values[0]/row['effect'].values[0]
+        if row['effect'].values[0] == 0:
+            errors[df1['rsid'][i]] = 0
+        else:
+            errors[df1['rsid'][i]] = row['effect_error'].values[0]/row['effect'].values[0]
     return errors
 
 def get_BMI_statistic(score):
@@ -113,18 +116,6 @@ def get_T2D_statistic(score):
         return df_score['means'][21], df_score['sdev'][21]
     else:
         return df_score['means'][22], df_score['sdev'][22]
-
-def solve(mu1,mu2,sigma1,sigma2):
-    a = 1/(2*sigma1**2) - 1/(2*sigma2**2)
-    b = mu2/(sigma2**2) - mu1/(sigma1**2)
-    c = mu1**2 /(2*sigma1**2) - mu2**2 / (2*sigma2**2) - np.log(sigma2/sigma1)
-    return np.roots([a,b,c])
-
-def nordist_overlape(mu1, sigma1, mu2, sigma2):
-    result = solve(mu1,mu2,sigma1,sigma2)
-    r = result[0]
-    area = norm.cdf(r,mu2,sigma2) + (1.-norm.cdf(r,mu1,sigma1))
-    return area
 
 rsid_genotype = {}  ## Dictionary where keys are rsid and values are genotype
 for i in range(df_statistic.shape[0]):
@@ -207,13 +198,13 @@ def update_output(list_of_contents, list_of_names):
         user_BMI_mean, user_BMI_stdev = get_BMI_statistic(PGRS_bmi)
         low_BMI_mean = df_score['means'][0]
         low_BMI_stdev = df_score['sdev'][0]
-        BMI_overlap = nordist_overlape(low_BMI_mean, low_BMI_stdev, user_BMI_mean, user_BMI_stdev)
+        BMI_overlap = NormalDist(low_BMI_mean, low_BMI_stdev).overlap(NormalDist(user_BMI_mean, user_BMI_stdev))
         BMI_risk = round((1-BMI_overlap)*100, 2)
 
         user_T2D_mean, user_T2D_stdev = get_T2D_statistic(PGRS_diabetes)
         low_T2D_mean = df_score['means'][11]
         low_T2D_stdev = df_score['sdev'][11]
-        T2D_overlap = nordist_overlape(low_T2D_mean, low_T2D_stdev, user_T2D_mean, user_T2D_stdev)
+        T2D_overlap = NormalDist(low_T2D_mean, low_T2D_stdev).overlap(NormalDist(user_T2D_mean, user_T2D_stdev))
         T2D_risk = round((1-T2D_overlap)*100, 2)
 
         return [html.H3('Your BMI polygenic risk score is {}'.format(PGRS_bmi)),
