@@ -17,14 +17,63 @@
       |- __init__.py
       |- tests/
         |- __init__.py
+        |- test_data_extract.py
+        |- test_datavis.py
+        |- test_vectorized_datavis.py
       |- data/
-        |- SNP.csv
+        |- 23andMe_data.csv 
+        |- 'Genetic Statistical Data.xlsx - Initial data.csv' 
+        |- 23andMe_data.txt 
+        |- 'Obesity OR-Effect.csv'
+        |- 'Genetic Data T2DB.xlsx'
+        |- 'Polygenic Risk Scores Data.csv'
+        |- 'Genetic Data.csv'
+      |- bmistat.py
+      |- data_extract.py
+      |- type2diabetes.py
+      |- datavis.py
+      |- vectorized_datavis.py
+      |- match_snps.ipynb	
   |- app/
+      |- multi_page/
+        |- apps/
+          |- __init__.py
+          |- consent.py
+          |- main.py
+          |- statistic.py
+          |- load.py
+          |- README.txt
+        |- app.py
+        |- index.py
+        |- requirements.txt
+        |- runtime.txt
+        |- README.txt
+        |- 'Polygenic Risk Scores Data.csv'
+        |- 'Genetic Data.csv'
+        |- uwlogo.png
+        |- .Procfile
       |- dash_setup.sh
       |- norm_visual_webtool.py
       |- load_file.py
       |- popup_window.py
   |- docs/
+      |- _build/
+        |- doctrees/
+          |- environment.pickle
+          |- genocode.doctree
+          |- index.doctree
+          |- modules.doctree
+        |- html/
+          |- _sources/
+          |- _static/
+          |- genindex.html
+          |- index.html    
+          |- objects.inv
+          |- search.html
+          |- genocode.html  
+          |- modules.html  
+          |- py-modindex.html 
+          |- searchindex.js
       |- README.md
       |- Gantt Chart.ipynb
       |- conf.py
@@ -32,12 +81,16 @@
       |- genocode.rst
       |- User Story.pdf
       |- index.rst
+      |- Makefile
+      |- make.bat
   |- examples/
       |- README.md
       |- DataOperation.ipynb
       |- DataOperation.example.ipynb
       |- NormalDistribution.ipynb
       |- NormalDistribution.example.ipynb
+      |- 'Data Visualization Tool.ipynb'
+      |- 'Unit Tests.ipynb'
   |- images/
       |- README.md
   |- setup.py
