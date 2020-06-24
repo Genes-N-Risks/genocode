@@ -130,7 +130,14 @@ pre-suited to run `genocode`
 * Access to our jupyter notebook examples
 
 ### Example Output
+* Homepage
 ![Homepage](https://github.com/Genes-N-Risks/genocode/blob/master/images/main_demo.gif)
+* Data page
+![Homepage](https://github.com/Genes-N-Risks/genocode/blob/master/images/statistic_demo.gif)
+* Agreement page
+![Homepage](https://github.com/Genes-N-Risks/genocode/blob/master/images/agreement_demo.gif)
+* Users analysis page
+![Homepage](https://github.com/Genes-N-Risks/genocode/blob/master/images/load_demo.gif)
 
 ### Miscellaneous Notes
 
