@@ -5,10 +5,14 @@
 [![PyPI license](https://img.shields.io/pypi/l/ansicolortags.svg)](https://pypi.python.org/pypi/ansicolortags/)
 [![HitCount](http://hits.dwyl.com/Genes-N-Risks/genocode.svg)](http://hits.dwyl.com/Genes-N-Risks/genocode)
 ## Webtool with synthetic datasets to better understand health risks associated with common genetic polymorphisms
-* Our webtool allows users to privately upload their genetic test data, identify risk genes that they are concerned about, and be shown outputs of normally-distributed synthetic data that describes the full possible range of phenotypes for a given genotype. Hundreds of common single nucleotide polymorphisms (SNPs) are associated with altered risk of common diseases and health risks; however, these are based on average health data that incompletely describes the variability of the population and the true risk of a SNP being associated with an outcome in a given individual. We designed a user-friendly web-tool GenoCode using synthetic datasets that we collected from published literature to help users better understand their health risks associated with common genetic polymorphisms from their direct-to-consumer genetic test.
 
+Problem: Direct-to-consumer (DTC) genetic tests are increasingly popular, with a market worth of around $1B that is expected to double over the next decade. Hundreds of common single nucleotide polymorphisms (SNPs) are associated with altered risk of common diseases and health risks; however, these are based on average health data that incompletely describes the variability or the heterogeneity of the population and the true risk of a SNP being associated with an outcome in a given individual. This reduces the ability of an individual to determine how they themselves or their patients might truly be affected. Healthcare practitioners must therefore be able to navigate between the promise and reality of these tools, including being able to interpret the literature that is associated with a given risk or suggested intervention.
 
+Solution: Our webtool allows users to privately upload their genetic test data, identify risk genes that they are concerned about, and be shown outputs of normally-distributed synthetic data that describes the full possible range of phenotypes for a given genotype. We are looking to design a user-friendly web-tool GenoCode using synthetic datasets that we collected from published literature to help users better understand their health risks associated with common genetic polymorphisms from their direct-to-consumer genetic test.
 
+Beneficiary: The user is anyone who has taken a DTC genetic test offered by companies such as 23andme, Ancestry.com, and MyHeritage, and would like to understand their test results with much more clarity.
+
+Site: https://genocode.herokuapp.com
 
 #### Repository Structure
 ```
@@ -129,7 +133,7 @@ pre-suited to run `genocode`
 * Before using
 * Access to our jupyter notebook examples
 
-### Example Output
+### Example Output 
 * Homepage
 ![Homepage](https://github.com/Genes-N-Risks/genocode/blob/master/images/main_demo.gif)
 * Data page
@@ -139,5 +143,7 @@ pre-suited to run `genocode`
 * Users analysis page
 ![Homepage](https://github.com/Genes-N-Risks/genocode/blob/master/images/load_demo.gif)
 
-### Miscellaneous Notes
-
+### Acknowledgements
+* We thank Dr. Thomas Wood, UW Medicine for his guidance and sponsorship of the project. This app would not have been possible without his help. 
+* This app is a result of Data Intensive Research Enabling Clean Technologies (DIRECT) Program offered by the E-Science Institute. 
+* We would also like to thank Dr David Beck, Dr Dan Schwartz, and Dr Ting Cao for their support and guidance throughout the program.
