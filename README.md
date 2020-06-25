@@ -12,7 +12,9 @@
 
 **Beneficiary:** The user is anyone who has taken a DTC genetic test offered by companies such as 23andme, Ancestry.com, and MyHeritage, and would like to understand their test results with much more clarity.
 
-**Site:** https://genocode.herokuapp.com
+**Site:** https://genocode.herokuapp.com.
+
+**Disclaimer:** The current app is a prototype only. It only supports 23andMe test results. The output generated does not correspond to your actual risk. The heterogeneity factors will soon be added. Any decision you take after consulting the app is not our  responsibility.
 
 #### Repository Structure
 ```
@@ -141,6 +143,7 @@ pre-suited to run `genocode`
 * Agreement page
 ![Homepage](https://github.com/Genes-N-Risks/genocode/blob/master/images/agreement_demo.gif)
 * Users analysis page
+Please upload the text file containing the SNPs provided by 23andMe.
 ![Homepage](https://github.com/Genes-N-Risks/genocode/blob/master/images/load_demo.gif)
 
 ### Acknowledgements
